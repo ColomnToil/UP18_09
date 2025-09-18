@@ -20,6 +20,11 @@ INSERT INTO `users` (`first_name`, `last_name`, `email`,
 )
 HEREDOC;
 // выполняем запрос вставки данных о пользователе
-$mysqli->query($insert_sql) or die('Ошибка вставки данных: ' .
-    $mysqli->errno . '. ' . $mysqli->error);
-header("Location: show-user.php");
+
+if (!$mysqli->query($insert_sql)) {
+    header("Location: show-error.php?error_message=Ошибка вставки
+данных&system_error_message=" . $mysqli->error);
+    exit;
+} else {
+    header("Location: show-user.php");
+}

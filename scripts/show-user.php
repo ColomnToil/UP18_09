@@ -18,7 +18,10 @@ if ($res) {
     $url_site = $row['url_site'];
     $vk = $row['vk'];
 } else {
-    die("Ошибка получения пользователя с ID = $user_id");
+    header("Location: show-error.php?error_message=Ошибка получения
+пользователя с ID = $user_id&system_error_message=Невозможно
+обработать запрос на извлечение данных пользователя");
+    exit;
 }
 ?>
 <!DOCTYPE html>
