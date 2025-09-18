@@ -1,7 +1,6 @@
 <?
 require_once("connect.php");
-
-$user_id = $_REQUEST["user_id"];
+$user_id = $_REQUEST["id"];
 // создание строки инструкции SELECT
 $select_sql = "SELECT * FROM `users` WHERE `id` = " . $user_id;
 // выполнение запроса
@@ -18,10 +17,8 @@ if ($res) {
     $url_site = $row['url_site'];
     $vk = $row['vk'];
 } else {
-    header("Location: show-error.php?error_message=Ошибка получения
-пользователя с ID = $user_id&system_error_message=Невозможно
-обработать запрос на извлечение данных пользователя");
-    exit;
+    header("Location: show-error.php?error_message=Ошибка получения пользователя с ID = $user_id&system_error_message=Невозможно обработать запрос на извлечение данных пользователя");
+    exit();
 }
 ?>
 <!DOCTYPE html>
