@@ -6,7 +6,7 @@ $last_name = trim($_REQUEST['last_name']);
 $email = trim($_REQUEST['email']);
 $url_site = trim($_REQUEST['url_site']);
 $vk = trim($_REQUEST['vk']);
-$bio = trim($_REQUEST['bio']);
+$bio = preg_replace('/[\r\n]+/', '<p>', $row['bio']);
 
 $insert_sql = <<<HEREDOC
 INSERT INTO `users` (`first_name`, `last_name`, `email`,
@@ -23,5 +23,3 @@ HEREDOC;
 $mysqli->query($insert_sql) or die('Ошибка вставки данных: ' .
     $mysqli->errno . '. ' . $mysqli->error);
 header("Location: show-user.php");
-
-?>
