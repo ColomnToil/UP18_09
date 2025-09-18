@@ -19,7 +19,7 @@
             <h1>Вступайте в наш виртуальный клуб</h1>
             <p>Пожалуйста, введите ниже свои данные для связи в
                 Интернете:</p>
-            <form action="create-user.php" method="POST">
+            <form action="create-user.php" method="POST" enctype="multipart/form-data">
                 <fieldset>
                     <label for="first_name">Имя:</label> <input type="text"
                         name="first_name" size="20" /><br />
@@ -31,6 +31,12 @@
                         type="text" name="url_site" size="50" /><br />
                     <label for="vk">Идентификатор в VK:</label> <input
                         type="text" name="vk" size="20" /><br />
+                    <label for="user_pic">Прикрепить фото:</label><input type="file"
+                        name="user_pic" size="30" /><br />
+                    <label for="bio">Биография:</label>
+                    <textarea name="bio" cols="40" rows="10"></textarea><br />
+
+
                 </fieldset>
                 <br />
                 <fieldset class="center">
