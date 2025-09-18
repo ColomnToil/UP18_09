@@ -3,8 +3,7 @@ require_once("connect.php");
 
 $user_id = $_REQUEST["user_id"];
 // создание строки инструкции SELECT
-$select_sql = "SELECT * FROM `users` WHERE `user_id` = " .
-    $user_id;
+$select_sql = "SELECT * FROM `users` WHERE `id` = " . $user_id;
 // выполнение запроса
 $res = $mysqli->query($select_sql);
 if ($res) {
