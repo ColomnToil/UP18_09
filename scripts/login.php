@@ -15,6 +15,7 @@
                 Manual</h1>
         </div>
         <div id="example">Авторизация</div>
+        <? require_once('menu.php'); ?>
         <div id="content">
             <h1>Авторизация в клубе</h1>
             <form id="signin_form" action="login.php" method="POST">

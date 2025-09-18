@@ -14,6 +14,7 @@
             <h1>PHP & MySQL: The Missing Manual</h1>
         </div>
         <div id="example">Регистрация</div>
+        <? require_once('menu.php'); ?>
         <div id="content">
             <h1>Вступайте в наш виртуальный клуб</h1>
             <p>Пожалуйста, введите ниже свои данные для связи в
