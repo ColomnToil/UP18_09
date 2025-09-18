@@ -1,3 +1,7 @@
+<?
+$error_message = $_REQUEST["error_message"];
+$system_error_message = $_REQUEST["system_error_message"];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +22,9 @@
         <?php require("menu.php"); ?>
         <div id="content">
             <h1>Нам очень жаль...</h1>
-            <span class="error_message"></span>
+            <span class="error_message">
+                <?= $error_message; ?>
+            </span>
             <p><img src="../images/error.jpg" class="error" />
                 Не волнуйтесь, мы в курсе происходящего и предпримем все
                 необходимые меры. Если же вы хотите связаться с нами и узнать
@@ -33,6 +39,13 @@
                 тому времени мы во всем разберемся. Еще раз спасибо...
                 надеемся на ваше скорое возвращение.</p>
             <p>И еще раз извините за причиненные неудобства.</p>
+            <hr />
+
+            <?= "<p>Было получено следующее сообщение об ошибке
+системного уровня: <b> " . $system_error_message .
+                "</b></p>";
+            ?>
+
         </div>
         <div id="footer"></div>
     </div>
