@@ -1,19 +1,10 @@
 <?
 require_once("connect.php");
 
-$first_name = "Кристофер Джон";
-$last_name = "Вильсон";
-$user_image = "../images/missing_user.png";
-$bio = "Кристофер Джон Вильсон - старт-питчер бейсбольной команды
-Техас Рейнджерс. После нескольких лет выступлений в качестве релифпитчера,в 2010 году дебютировал в качестве стартера Рейнджерс, а в
-2011 году стал штатным стартером команды. Левша, известен своим
-крутым характером,толстыми ожерельями из веревок и целым набором из
-устрашающих противника вещей.<p>Кристофер Джон не только
-бейсболист, но и автогонщик, и предпочитает домашнему безделью
-южноафриканское сафари.</p>";
-$email = "mailto:wilson@exasrangers.com";
-$url_site = "http://wilson.exasrangers.com";
-$vk = "https://vk.com/j_wilson";
+$user_id = $_REQUEST["user_id"];
+$select_sql = "SELECT * FROM `users` WHERE `user_id` = " . $user_id;
+
+$res = $mysqli->query($select_sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">
