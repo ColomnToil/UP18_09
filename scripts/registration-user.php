@@ -35,8 +35,6 @@
                         name="user_pic" size="30" /><br />
                     <label for="bio">Биография:</label>
                     <textarea name="bio" cols="40" rows="10"></textarea><br />
-
-
                 </fieldset>
                 <br />
                 <fieldset class="center">
